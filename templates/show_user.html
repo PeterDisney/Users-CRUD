@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show_user</title>
+
+    <!-- template rendering  -->
+
+</head>
+    <body>
+            <!-- show user jinja brings in new user id -->
+        <h1>Show User {{user.id}}</h1>
+            <!-- adds home link to show user tab -->
+        <a href="/">HOME</a>
+        <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
+        <p>Email: {{user.email}}</p>
+        <p>Created On {{user.created_at}}</p>
+        </form>
+            <!-- creates edit and delete links -->
+        <a href="/user/{{user['id']}}/edit">EDIT</a> | <a href="/user/{{user['id']}}/delete">DELETE</a>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user_edit</title>
+</head>
+<body>
+    <h1>Edit User {{user.id}}</h1>
+    <!-- adds redirect to home (link) -->
+    <a href="/">HOME</a>
+    <!------------------>
+    <form action="/user/{{user.id}}/edited" method="POST">
+
+        <label for="fname">First Name:</label>
+            <input type="text" name="first_name" value="{{user.first_name}}">
+
+        <label for="lname">Last Name:</label>
+            <input type="text" name="last_name" value="{{user.last_name}}">
+
+        <label for="email" >Email:</label>
+            <input type="text" name="email" value="{{user.email}}">
+
+        <button class="btn btn-success">Update</button>
+        </form>
+        <!-- redirect to  -->
+        <a href="/user">Show User</a>
+</body>
+</html>
+
+<!-- <input type="submit" value="Create User"> -->
+        <!-- <form action="submit">
+            <input type="submit" value="Submit" class="btn btn-success">

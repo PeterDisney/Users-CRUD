@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>user_read</title>
+</head>
+    <body>
+        <div class="container justify-content-center w-60 p-2">
+            <table class="table table-success table-striped">
+                <h1 class="d-flex justify-content-center">All Users</h1>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th> First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                    </tr>
+                        <tbody>
+<!-- this is iterating through my users database -->
+                            {% for user in users %}
+                            <tr>
+                                <td>{{user['id']}}</td>
+                                <td>{{user['first_name']}}</td>
+                                <td>{{user['last_name']}}</td>
+                                <td>{{user['email']}}</td>
+                                <td>{{user['created_at']}}</td>
+                                <td>
+                                    <!--linking/creating the actions-->
+                                    <a href="/user/{{user['id']}}/show">Show</a>
+                                    <a href="/user/{{user['id']}}/edit">Edit</a>
+                                    <a href="/user/{{user['id']}}/delete">Delete</a>
+                                    <!-------------------------------->
+                                </td>
+                            </tr>
+                            {% endfor %}
+<!------------------------------------------------>
+                        </tbody>
+                </thead>
+            </table>
+        </div>
+            <form action="user/new">
+                <input type="submit" value="Add New User" class="btn btn-success">
+            </form>
+    </body>
+</html>
